@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html>
+    <head>
+
+        <!-- Latest compiled and minified CSS -->
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@3.3.7/dist/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+
+        <!-- Optional theme -->
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@3.3.7/dist/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
+
+        <!-- Latest compiled and minified JavaScript -->
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@3.3.7/dist/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+
+        <style>
+
+            body {
+                background-color: white;
+            }
+            body.dark-mode {
+                background-color: rgb(53, 53, 53);
+            }
+            .jumbotron {
+                background-color: lightgray;
+                border-radius: 60px;
+                margin-left: 5%;
+                margin-right: 5%;
+                margin-top: 1%;
+            }
+            .dark-mode .jumbotron {
+                background-color: rgb(0, 0, 0);
+            }
+            #dark-toggle {
+
+                animation-name: shrink;
+                animation-duration: 0.1s;
+                border-radius: 30px;
+                position: relative;
+                margin-left: 5%;
+                width: 10%;
+                height: 5%;
+                background-color: lightgray;
+                border-style: none;
+                padding-top: 1%;
+                /* padding-bottom: 0.5%; */
+
+            }
+            .dark-mode #dark-toggle {
+                background-color: black;
+            }
+            .dark-mode p{
+                color: white;
+            }
+            .dark-mode h2{
+                color: white;
+            }
+            .dark-mode h3{
+                color: white;
+            }
+            @keyframes grow {
+               from {
+                padding-top: 1%;
+                padding-bottom: 0%;
+               }
+               to {
+                padding-top: 2%;
+                padding-bottom: 1%;
+               } 
+            }
+            @keyframes shrink {
+               from {
+                padding-top: 2%;
+                padding-bottom: 1%;
+               }               to {
+                padding-top: 1%;
+                padding-bottom: 0%;
+               }
+            }
+            #dark-toggle:hover {
+
+                border-radius: 30px;
+                position: relative;
+                animation-name: grow;
+                animation-duration: 0.1s;
+                padding-top: 2%;
+                padding-bottom: 1%;
+                background-color: gray;
+            }
+            .red {
+                margin-top: 5%;
+                position: fixed;
+                top: 25%;
+                left: 20%;
+                background-color: lightgray;
+                border-radius: 30px;
+                padding-bottom: 50px;
+                padding-right: 50px;
+                padding-left: 50px;
+                transition: 0.1s ease;
+            }
+            .green {
+                margin-top: 5%;
+                position: fixed;
+                top: 25%;
+                left: 60%;
+                background-color: lightgray;
+                border-radius: 30px;
+                padding-bottom: 50px;
+                padding-left: 50px;
+                padding-right: 50px;
+                transition: 0.1s ease;
+            }
+            .red:hover {
+                transform: scale(1.1);
+            }
+            .green:hover {
+                transform: scale(1.1);
+            }
+            .dark-mode .red {
+                background-color: black;
+            }
+            .dark-mode .green {
+                background-color: black;
+            }
+            img {
+                width: 25vw;
+                height: 15vw;
+                object-fit: cover;
+            }
+            #leaf {
+                position: absolute;
+                bottom: 1%;
+                left: 0%;
+                max-width: 15vw;
+            }
+
+        </style>
+
+        <title>My Poll</title>
+
+    </head>
+    <body>
+        
+        <div class="jumbotron text-center">
+            <h2>Which Christmas Color is better?</h2>
+        </div>
+        <button onclick="document.body.classList.toggle('dark-mode');" id="dark-toggle">
+            <p>Toggle Dark Mode</p>
+        </button>
+        <br>
+        <div onclick="red();" class="text-center">
+            <div class="red">
+                <h3>Red</h3>
+                <img src="https://media.istockphoto.com/id/1183155286/vector/christmas-vector-background.jpg?s=612x612&w=0&k=20&c=iWlNtRDMMnvImtX3mRYhA_-vqCfCPB-gv-DsqEUHarw=">
+            </div>
+        </div>
+
+        <div onclick="green();" class="text-center">
+           <div class="green">
+            <h3>Green</h3>
+            <img src="https://media.istockphoto.com/id/1285159499/vector/christmas-background-of-snowflakes.jpg?s=612x612&w=0&k=20&c=rXn7DHG7rDvboUgo9lobYc10Q5o3skgH5njOc5zWXPQ=">
+           </div>
+        </div>
+
+       <img id="leaf" src="https://i.ibb.co/cK5KQPv/mistletoe.png">
+
+       <script>
+            //clears the page and provides a simple message.
+            function green() {
+                document.body.innerHTML = '<h1 style="color: darkgray;" class="text-center">You Chose Green</h1>';
+            }
+
+            //clears the page and provides a simple message.
+            function red () {
+                document.body.innerHTML = '<h1 style="color: darkgray;" class="text-center">You Chose Red</h1>';
+            }
+       </script>
+    </body>
+</html>
